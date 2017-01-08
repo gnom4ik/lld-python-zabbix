@@ -1,4 +1,4 @@
-def out(stdout, fname):
+def main(stdout, fname):
     l1 = '{\n'
     l2 = '\t\"data\":\n\t['
     l3 = '\t\t{'

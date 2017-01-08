@@ -1,20 +1,43 @@
-def main(stdout, fname):
-    l1 = '{\n'
-    l2 = '\t\"data\":\n\t['
-    l3 = '\t\t{'
-    l3_1 = '\n\t\t\t'
-    l4 = '\n\t\t},'
-    l5 = '\t]\n'
-    l6 = '}\n'
-    l7 = '\n\t\t}'
+l1 = '{\n'
+l2 = '\t\"data\":\n\t['
+l3 = '\t\t{'
+l3_1 = '\n\t\t\t'
+l4 = '\n\t\t},'
+l5 = '\t]\n'
+l6 = '}\n'
+l7 = '\n\t\t}'
+
+def main(stdin, fname):
+
     counter = 1
-    controller = '{1}{3}{5}{0}{4}{1}{2}'.format(fname, '\"', ':', '{', '}', '#')
+    name = '{1}{3}{5}{0}{4}{1}{2}'.format(fname, '\"', ':', '{', '}', '#')
     print(l1 + l2)
-    for string in stdout:
+    for string in stdin:
         key = string.split(':')[0]
-        if counter < len(stdout):
-            print(l3 + l3_1 + controller + '\"' + key + '\"' + l4)
+        if counter < len(stdin):
+            print(l3 + l3_1 + name + '\"' + key + '\"' + l4)
             counter += 1
         else:
-            print(l3 + l3_1 + controller + '\"' + key + '\"' + l7)
+            print(l3 + l3_1 + name + '\"' + key + '\"' + l7)
+    print(l5 + l6)
+
+def hdd(stdin, smart_status):
+    x = len(stdin) - 1
+    n = 0
+    print(l1 + l2)
+    while n <= x:
+        if stdin[n] in stdin:
+            if n < x:
+                if smart_status == ['Enabled']:
+                    status = 1
+                else:
+                    status = 0
+                print(l3 + '\t\t\t\"{#DISKNAME}\":' + '\"' + stdin[n] + '\",' + '\n\t\t\t\t\"{#SMART_ENABLED}":' + '\"' + str(status) + '\"' + l4)
+            elif n == x:
+                if smart_status == ['Enabled']:
+                    status = 1
+                else:
+                    status = 0
+                print(l3 + '\t\t\t\"{#DISKNAME}\":' + '\"' + stdin[n] + '\",' + '\n\t\t\t\t\"{#SMART_ENABLED}":' + '\"' + str(status) + '\"' + l4.replace(",", ""))
+        n += 1
     print(l5 + l6)

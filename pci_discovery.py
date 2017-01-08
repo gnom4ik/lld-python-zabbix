@@ -8,5 +8,4 @@ command = 'lspci |grep \'controller\' |sed \'s/^..:..\..\ //g\'|uniq'
 stdout = str(Popen(command, shell=True, stdin=PIPE, stdout=PIPE).stdout.read())
 stdout = re.findall(r'\\n(.*?):', stdout)
 fname = 'CONTROLLER'
-
-mod_json.out(stdout,fname)
+mod_json.out(stdout, fname)

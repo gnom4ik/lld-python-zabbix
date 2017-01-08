@@ -1,4 +1,4 @@
-def mod_json(stdout, kname):
+def out(stdout, kname):
     l1 = '{\n'
     l2 = '\t\"data\":\n\t['
     l3 = '\t\t{'

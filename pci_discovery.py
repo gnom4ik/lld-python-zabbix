@@ -4,7 +4,7 @@
 from subprocess import Popen, PIPE
 import re
 import mod_json
-command = 'lspci |grep \'controller\' |sed \'s/^..:..\..\ //g\'|uniq'
+command = 'lspci |sed \'s/^..:..\..\ //g\'|uniq'
 stdout = str(Popen(command, shell=True, stdin=PIPE, stdout=PIPE).stdout.read())
 stdout = re.findall(r'\\n(.*?):', stdout)
 fname = 'CONTROLLER'

@@ -8,4 +8,7 @@ md_find = "cat /proc/mdstat |grep -o 'md[0-9]*' |uniq"
 y = str(Popen(md_find, shell=True, stdin=PIPE, stdout=PIPE).stdout.read())
 stdout = re.findall('md\d+', y)
 controller = 'MDRAID'
-mod_json.out(stdout,controller)
+if stdout:
+    mod_json.out(stdout, controller)
+else:
+    exit()

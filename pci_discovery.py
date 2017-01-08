@@ -7,6 +7,6 @@ import mod_json
 command = 'lspci |grep \'controller\' |sed \'s/^..:..\..\ //g\'|uniq'
 stdout = str(Popen(command, shell=True, stdin=PIPE, stdout=PIPE).stdout.read())
 stdout = re.findall(r'\\n(.*?):', stdout)
-controller = 'CONTROLLER'
+fname = 'CONTROLLER'
 
-mod_json.out(stdout,controller)
+mod_json.out(stdout,fname)

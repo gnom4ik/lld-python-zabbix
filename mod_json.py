@@ -36,12 +36,12 @@ def hdd(stdin):
                     status = 1
                 else:
                     status = 0
-                print(l3 + '\t\t\t\"{#DISKNAME}\":' + '\"' + stdin[n] + '\",' + '\n\t\t\t\t\t\"{#SMART_ENABLED}":' + '\"' + str(status) + '\"' + l4)
+                print(l3 + '\n\t\t\t\"{#DISKNAME}\":' + '\"' + stdin[n] + '\",' + '\n\t\t\t\"{#SMART_ENABLED}":' + '\"' + str(status) + '\"' + l4)
             elif n == x:
                 if smart_status == ['Enabled']:
                     status = 1
                 else:
                     status = 0
-                print(l3 + '\t\t\t\"{#DISKNAME}\":' + '\"' + stdin[n] + '\",' + '\n\t\t\t\t\t\"{#SMART_ENABLED}":' + '\"' + str(status) + '\"' + l4.replace(",", ""))
+                print(l3 + '\n\t\t\t\"{#DISKNAME}\":' + '\"' + stdin[n] + '\",' + '\n\t\t\t\"{#SMART_ENABLED}":' + '\"' + str(status) + '\"' + l4.replace(",", ""))
         n += 1
     print(l5 + l6)

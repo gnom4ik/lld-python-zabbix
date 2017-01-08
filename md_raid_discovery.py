@@ -9,6 +9,6 @@ y = str(Popen(md_find, shell=True, stdin=PIPE, stdout=PIPE).stdout.read())
 stdout = re.findall('md\d+', y)
 controller = 'MDRAID'
 if stdout:
-    mod_json.out(stdout, controller)
+    mod_json.main(stdout, controller)
 else:
     exit()

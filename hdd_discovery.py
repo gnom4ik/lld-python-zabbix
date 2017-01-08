@@ -11,7 +11,5 @@ if len(str(cmd('whereis smartmontools')).split('/')) > 1:
 else:
     print('Please: sudo apt install smartmontools')
     hdd_find = ['']
-for disk in cmd(hdd_find):
-    smart_status = 'sudo smartctl -i /dev/' + disk + ' |grep -o \'Enabled\''
-    mod_json.hdd(cmd(hdd_find))
+mod_json.hdd(cmd(hdd_find))
 

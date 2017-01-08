@@ -2,9 +2,10 @@
 # -*- coding: utf-8 -*-
 import mod_json
 from subprocess import Popen, PIPE
-def cmd(x):
-    y = str(Popen(x, shell=True, stdin=PIPE, stdout=PIPE).stdout.read()).replace('b\'', '').replace(' ', '').replace("'", '').rstrip('\\n').split('\\n')
-    return y
+def cmd(command):
+    string = str(Popen(command, shell=True, stdin=PIPE, stdout=PIPE).stdout.read())
+    string = string.replace('b\'', '').replace(' ', '').replace("'", '').rstrip('\\n').split('\\n')
+    return string
 if len(str(cmd('whereis smartmontools')).split('/')) > 1:
     hdd_find = "sudo smartctl --scan |grep -o sd[a-z] |uniq"
 else:

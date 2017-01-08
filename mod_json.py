@@ -8,7 +8,7 @@ def out(stdout, fname):
     l6 = '}\n'
     l7 = '\n\t\t}'
     counter = 1
-    controller = '{1}{3}{5}{0}{4}{1}{2}'.format(fname,'\"',':','{','}','#')
+    controller = '{1}{3}{5}{0}{4}{1}{2}'.format(fname, '\"', ':', '{', '}', '#')
     print(l1 + l2)
     for string in stdout:
         key = string.split(':')[0]

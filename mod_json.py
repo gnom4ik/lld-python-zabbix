@@ -8,6 +8,7 @@ l5 = '\t]\n'
 l6 = '}\n'
 l7 = '\n\t\t}'
 
+
 def main(stdin, fname):
 
     counter = 1
@@ -22,6 +23,7 @@ def main(stdin, fname):
             print(l3 + l3_1 + name + '\"' + key + '\"' + l7)
     print(l5 + l6)
 
+
 def hdd(stdin):
     from subprocess import Popen, PIPE
     x = len(stdin) - 1
@@ -29,7 +31,7 @@ def hdd(stdin):
     print(l1 + l2)
     while n <= x:
         if stdin[n] in stdin:
-            smart_status = str(Popen('sudo smartctl -i /dev/' + stdin[n] + ' |grep -o \'Enabled\'', shell=True, stdin=PIPE,stdout=PIPE).stdout.read())
+            smart_status = str(Popen('sudo smartctl -i /dev/' + stdin[n] + ' |grep -o \'Enabled\'', shell=True, stdin=PIPE, stdout=PIPE).stdout.read())
             smart_status = smart_status.replace('b\'', '').replace(' ', '').replace("'", '').rstrip('\\n').split('\\n')
             if n < x:
                 if smart_status == ['Enabled']:

@@ -3,8 +3,9 @@
 from subprocess import Popen, PIPE
 import re
 import mod_json
-x = 'sensors'
-y = str(Popen(x, shell=True, stdin=PIPE, stdout=PIPE).stdout.read())
-stdout = re.findall('\w\w\w\w\d+|\w\w\w\w \d+', y)
+cmd = 'sensors'
+stdout = str(Popen(cmd, shell=True, stdin=PIPE, stdout=PIPE).stdout.read())
+print(stdout)
+stdout = re.findall(r'\\n(.*?)[+]', stdout)
 fname = 'TEMPSENS'
 mod_json.main(stdout, fname)

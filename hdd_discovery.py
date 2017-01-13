@@ -11,5 +11,3 @@ if '/etc/smartmontools' in str(cmd('whereis smartmontools')):
 else:
     print('Please: sudo apt install smartmontools')
     exit()
-
-

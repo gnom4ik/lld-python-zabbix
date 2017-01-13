@@ -1,15 +1,15 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
-import mod_json
+import re, mod_json
 from subprocess import Popen, PIPE
 def cmd(command):
     string = str(Popen(command, shell=True, stdin=PIPE, stdout=PIPE).stdout.read())
-    string = string.replace('b\'', '').replace(' ', '').replace("'", '').rstrip('\\n').split('\\n')
     return string
-if len(str(cmd('whereis smartmontools')).split('/')) > 1:
+if '/etc/smartmontools' in str(cmd('whereis smartmontools')):
     hdd_find = "sudo smartctl --scan |grep -o sd[a-z] |uniq"
+    mod_json.hdd(re.findall(r'sd[a-z]', cmd(hdd_find)))
 else:
     print('Please: sudo apt install smartmontools')
-    hdd_find = ['']
-mod_json.hdd(cmd(hdd_find))
+    exit()
+
 

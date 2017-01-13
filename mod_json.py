@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
 
 l1 = '{\n'
 l2 = '\t\"data\":\n\t['

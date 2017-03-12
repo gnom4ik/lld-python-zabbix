@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 import re
-import mod_json
 from subprocess import Popen, PIPE
+
+from share.zabbix.externalscripts import mod_json
 
 
 def cmd(command):

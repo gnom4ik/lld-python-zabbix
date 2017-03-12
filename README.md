@@ -1,11 +1,8 @@
 test scripts on bash and python for zabbix lld
 
 Репозиторий создан для работы и накопления опыта в написании обнаружений LLD Zabbix, а так же для изучения языка програмирования Python.
-Создаем каталог для хранения программ -
-
-mkdir -p /share/zabbix/externalscripts
-
-cp ./lld-python-zabbix/*.py /share/zabbix/externalscripts
+cd ~/lld-python-zabbix/
+cp -r /
 
 chmod +x /share/zabbix/externalscripts/*
 

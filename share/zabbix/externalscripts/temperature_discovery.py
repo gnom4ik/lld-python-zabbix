@@ -7,6 +7,6 @@ from share.zabbix.externalscripts import mod_json
 
 cmd = 'sensors'
 stdout = str(Popen(cmd, shell=True, stdin=PIPE, stdout=PIPE).stdout.read())
-stdout = re.findall(r'\\n(\w+\d|\w+ \d):.*?\d\d', stdout)
+stdout = re.findall(r'\\n([^:]+):\s+[\+\-]?\d', stdout)
 fname = 'TEMPSENS'
 mod_json.main(stdout, fname)

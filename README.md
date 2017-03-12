@@ -4,7 +4,9 @@ test scripts on bash and python for zabbix lld
 
 ВАЖНО!!!
 
-Zabbix-agent собран из сырцов + ./configure --prefix=/. В /etc/zabbix_agentd.conf прописан Include=/etc/zabbix_agentd.conf.d/*.conf
+Zabbix-agent собран из сырцов + ./configure --prefix=/
+
+В /etc/zabbix_agentd.conf прописан Include=/etc/zabbix_agentd.conf.d/*.conf
 
 apt install lm-sensors
 

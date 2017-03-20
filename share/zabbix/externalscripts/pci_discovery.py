@@ -3,8 +3,7 @@
 
 import re
 from subprocess import Popen, PIPE
-
-from share.zabbix.externalscripts import mod_json
+import mod_json
 
 command = 'lspci |sed \'s/^..:..\..\ //g\'|uniq'
 stdout = str(Popen(command, shell=True, stdin=PIPE, stdout=PIPE).stdout.read())

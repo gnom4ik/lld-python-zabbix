@@ -3,8 +3,7 @@
 
 import re
 from subprocess import Popen, PIPE
-
-from share.zabbix.externalscripts import mod_json
+import mod_json
 
 md_find = "cat /proc/mdstat |grep -o 'md[0-9]*' |uniq"
 y = str(Popen(md_find, shell=True, stdin=PIPE, stdout=PIPE).stdout.read())

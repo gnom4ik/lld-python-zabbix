@@ -3,7 +3,7 @@
 import re
 from subprocess import Popen, PIPE
 
-from share.zabbix.externalscripts import mod_json
+import mod_json
 
 
 def cmd(command):

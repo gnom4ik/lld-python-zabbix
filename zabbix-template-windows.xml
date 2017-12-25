@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.4</version>
-    <date>2017-12-21T08:22:28Z</date>
+    <date>2017-12-25T19:42:38Z</date>
     <groups>
         <group>
             <name>Железо</name>
@@ -30,11 +30,52 @@
             </applications>
             <items>
                 <item>
+                    <name>Zabbix-agent ping</name>
+                    <type>0</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>agent.ping</key>
+                    <delay>30</delay>
+                    <history>10d</history>
+                    <trends>10d</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Zabbix status</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
                     <name>Smartctl --scan MD5SUM</name>
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>uHDD.alert</key>
+                    <key>uHDD[hash]</key>
                     <delay>600</delay>
                     <history>10d</history>
                     <trends>0</trends>
@@ -154,16 +195,58 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>{#DISKNAME} Test Result</name>
+                            <name>{#DISKNAME}: ID 5 Reallocated Sectors Count</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
-                            <key>uHDD[{#DISKNAME},Test_Result]</key>
+                            <key>uHDD[{#DISKNAME},5 Reallocated]</key>
                             <delay>3600</delay>
                             <history>10d</history>
-                            <trends>0</trends>
+                            <trends>20d</trends>
                             <status>0</status>
-                            <value_type>1</value_type>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>HDD SMART STATUS</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <preprocessing/>
+                            <jmx_endpoint/>
+                            <application_prototypes/>
+                            <master_item_prototype/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#DISKNAME}: ID 197 Current_Pending_Sector</name>
+                            <type>0</type>
+                            <snmp_community/>
+                            <snmp_oid/>
+                            <key>uHDD[{#DISKNAME},Current_Pending_Sector]</key>
+                            <delay>300</delay>
+                            <history>10d</history>
+                            <trends>20d</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
                             <allowed_hosts/>
                             <units/>
                             <snmpv3_contextname/>
@@ -237,49 +320,7 @@
                             <application_prototypes/>
                             <master_item_prototype/>
                         </item_prototype>
-						<item_prototype>
-                            <name>{#DISKNAME} Model Family</name>
-                            <type>0</type>
-                            <snmp_community/>
-                            <snmp_oid/>
-                            <key>uHDD[{#DISKNAME},Model_Family]</key>
-                            <delay>86400</delay>
-                            <history>10d</history>
-                            <trends>0</trends>
-                            <status>0</status>
-                            <value_type>1</value_type>
-                            <allowed_hosts/>
-                            <units/>
-                            <snmpv3_contextname/>
-                            <snmpv3_securityname/>
-                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                            <snmpv3_authpassphrase/>
-                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                            <snmpv3_privpassphrase/>
-                            <params/>
-                            <ipmi_sensor/>
-                            <authtype>0</authtype>
-                            <username/>
-                            <password/>
-                            <publickey/>
-                            <privatekey/>
-                            <port/>
-                            <description/>
-                            <inventory_link>0</inventory_link>
-                            <applications>
-                                <application>
-                                    <name>HDD SMART STATUS</name>
-                                </application>
-                            </applications>
-                            <valuemap/>
-                            <logtimefmt/>
-                            <preprocessing/>
-                            <jmx_endpoint/>
-                            <application_prototypes/>
-                            <master_item_prototype/>
-                        </item_prototype>
-						<item_prototype>
+                        <item_prototype>
                             <name>{#DISKNAME} Firmware Version</name>
                             <type>0</type>
                             <snmp_community/>
@@ -322,100 +363,16 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
-                            <name>{#DISKNAME} Serial Number</name>
+                            <name>{#DISKNAME} Model Family</name>
                             <type>0</type>
                             <snmp_community/>
                             <snmp_oid/>
-                            <key>uHDD[{#DISKNAME},Serial_Number]</key>
+                            <key>uHDD[{#DISKNAME},Model_Family]</key>
                             <delay>86400</delay>
                             <history>10d</history>
                             <trends>0</trends>
                             <status>0</status>
                             <value_type>1</value_type>
-                            <allowed_hosts/>
-                            <units/>
-                            <snmpv3_contextname/>
-                            <snmpv3_securityname/>
-                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                            <snmpv3_authpassphrase/>
-                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                            <snmpv3_privpassphrase/>
-                            <params/>
-                            <ipmi_sensor/>
-                            <authtype>0</authtype>
-                            <username/>
-                            <password/>
-                            <publickey/>
-                            <privatekey/>
-                            <port/>
-                            <description/>
-                            <inventory_link>0</inventory_link>
-                            <applications>
-                                <application>
-                                    <name>HDD SMART STATUS</name>
-                                </application>
-                            </applications>
-                            <valuemap/>
-                            <logtimefmt/>
-                            <preprocessing/>
-                            <jmx_endpoint/>
-                            <application_prototypes/>
-                            <master_item_prototype/>
-                        </item_prototype>
-                        <item_prototype>
-                            <name>{#DISKNAME}: ID 5 Reallocated Sectors Count</name>
-                            <type>0</type>
-                            <snmp_community/>
-                            <snmp_oid/>
-                            <key>uHDD[{#DISKNAME},5 Reallocated]</key>
-                            <delay>3600</delay>
-                            <history>10d</history>
-                            <trends>20d</trends>
-                            <status>0</status>
-                            <value_type>3</value_type>
-                            <allowed_hosts/>
-                            <units/>
-                            <snmpv3_contextname/>
-                            <snmpv3_securityname/>
-                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                            <snmpv3_authpassphrase/>
-                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                            <snmpv3_privpassphrase/>
-                            <params/>
-                            <ipmi_sensor/>
-                            <authtype>0</authtype>
-                            <username/>
-                            <password/>
-                            <publickey/>
-                            <privatekey/>
-                            <port/>
-                            <description/>
-                            <inventory_link>0</inventory_link>
-                            <applications>
-                                <application>
-                                    <name>HDD SMART STATUS</name>
-                                </application>
-                            </applications>
-                            <valuemap/>
-                            <logtimefmt/>
-                            <preprocessing/>
-                            <jmx_endpoint/>
-                            <application_prototypes/>
-                            <master_item_prototype/>
-                        </item_prototype>
-                        <item_prototype>
-                            <name>{#DISKNAME}: ID 197 Current_Pending_Sector</name>
-                            <type>0</type>
-                            <snmp_community/>
-                            <snmp_oid/>
-                            <key>uHDD[{#DISKNAME},Current_Pending_Sector]</key>
-                            <delay>300</delay>
-                            <history>10d</history>
-                            <trends>20d</trends>
-                            <status>0</status>
-                            <value_type>3</value_type>
                             <allowed_hosts/>
                             <units/>
                             <snmpv3_contextname/>
@@ -537,6 +494,48 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
+                            <name>{#DISKNAME} Serial Number</name>
+                            <type>0</type>
+                            <snmp_community/>
+                            <snmp_oid/>
+                            <key>uHDD[{#DISKNAME},Serial_Number]</key>
+                            <delay>86400</delay>
+                            <history>10d</history>
+                            <trends>0</trends>
+                            <status>0</status>
+                            <value_type>1</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>HDD SMART STATUS</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <preprocessing/>
+                            <jmx_endpoint/>
+                            <application_prototypes/>
+                            <master_item_prototype/>
+                        </item_prototype>
+                        <item_prototype>
                             <name>{#DISKNAME}: ID 10 Spin_Retry_Count</name>
                             <type>0</type>
                             <snmp_community/>
@@ -624,6 +623,48 @@
                             <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
+                            <name>{#DISKNAME} Test Result</name>
+                            <type>0</type>
+                            <snmp_community/>
+                            <snmp_oid/>
+                            <key>uHDD[{#DISKNAME},test_result]</key>
+                            <delay>3600</delay>
+                            <history>10d</history>
+                            <trends>0</trends>
+                            <status>0</status>
+                            <value_type>1</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>HDD SMART STATUS</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <preprocessing/>
+                            <jmx_endpoint/>
+                            <application_prototypes/>
+                            <master_item_prototype/>
+                        </item_prototype>
+                        <item_prototype>
                             <name>{#DISKNAME}: ID 199 UDMA_CRC_Error</name>
                             <type>0</type>
                             <snmp_community/>
@@ -668,7 +709,7 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{template-lld-hdd:uHDD.sn.[{#DISKNAME}].diff(0)}=1</expression>
+                            <expression>{template-lld-hdd-windows:uHDD[{#DISKNAME},Serial_Number].diff(0)}=1</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>{HOST.NAME}: [HDD.{#DISKNAME}]  - произошла смена физического диска.</name>
@@ -679,13 +720,13 @@
                             <priority>1</priority>
                             <description/>
                             <type>0</type>
-                            <manual_close>1</manual_close>
+                            <manual_close>0</manual_close>
                             <dependencies/>
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{template-lld-hdd:uHDD[{#DISKNAME},5 Reallocated].last(0)}&gt;0&#13;
-and {template-lld-hdd:uHDD[{#DISKNAME},5 Reallocated].change(0)}&gt;0</expression>
+                            <expression>{template-lld-hdd-windows:uHDD[{#DISKNAME},5 Reallocated].last(0)}&gt;0&#13;
+and {template-lld-hdd-windows:uHDD[{#DISKNAME},5 Reallocated].change(0)}&gt;0</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>{HOST.NAME}: [HDD.{#DISKNAME}] SMART, количество секторов, переназначенных винчестером в резервную область увеличилось!</name>
@@ -696,12 +737,12 @@ and {template-lld-hdd:uHDD[{#DISKNAME},5 Reallocated].change(0)}&gt;0</expressio
                             <priority>3</priority>
                             <description/>
                             <type>0</type>
-                            <manual_close>1</manual_close>
+                            <manual_close>0</manual_close>
                             <dependencies/>
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{template-lld-hdd:uHDD.health.[{#DISKNAME}].str(&quot;FAILED!&quot;)}=1</expression>
+                            <expression>{template-lld-hdd-windows:uHDD[{#DISKNAME},test_result].str(&quot;FAILED!&quot;)}=1</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>{HOST.NAME}: [HDD.{#DISKNAME}] SMART status: FAILED - требуется замена диск!</name>
@@ -712,12 +753,12 @@ and {template-lld-hdd:uHDD[{#DISKNAME},5 Reallocated].change(0)}&gt;0</expressio
                             <priority>5</priority>
                             <description/>
                             <type>0</type>
-                            <manual_close>1</manual_close>
+                            <manual_close>0</manual_close>
                             <dependencies/>
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{template-lld-hdd:uHDD.critical[{#DISKNAME}].last()}&gt;0</expression>
+                            <expression>{template-lld-hdd-windows:uHDD.critical[{#DISKNAME}].last()}&gt;0</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>{HOST.NAME}: [HDD.{#DISKNAME}] SMART количество критических ошибок: {ITEM.LASTVALUE}</name>
@@ -728,12 +769,12 @@ and {template-lld-hdd:uHDD[{#DISKNAME},5 Reallocated].change(0)}&gt;0</expressio
                             <priority>1</priority>
                             <description/>
                             <type>0</type>
-                            <manual_close>1</manual_close>
+                            <manual_close>0</manual_close>
                             <dependencies/>
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{template-lld-hdd:uHDD[{#DISKNAME},Current_Pending_Sector].abschange()}&gt;0</expression>
+                            <expression>{template-lld-hdd-windows:uHDD[{#DISKNAME},Current_Pending_Sector].abschange()}&gt;0</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>{HOST.NAME}: [HDD.{#DISKNAME}] SMART количество секторов-кандидатов на переназначение в резервную область увеличилось!</name>
@@ -744,28 +785,28 @@ and {template-lld-hdd:uHDD[{#DISKNAME},5 Reallocated].change(0)}&gt;0</expressio
                             <priority>3</priority>
                             <description/>
                             <type>0</type>
-                            <manual_close>1</manual_close>
+                            <manual_close>0</manual_close>
                             <dependencies/>
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{template-lld-hdd:uHDD[{#DISKNAME},UDMA_CRC_Error].last()}&gt;99 and ({template-lld-hdd:uHDD[{#DISKNAME},UDMA_CRC_Error].last(,86400)}-{template-lld-hdd:uHDD[{#DISKNAME},UDMA_CRC_Error].last()})&lt;&gt;0</expression>
+                            <expression>{template-lld-hdd-windows:uHDD[{#DISKNAME},UDMA_CRC_Error].last()}&gt;99 and ({template-lld-hdd-windows:uHDD[{#DISKNAME},UDMA_CRC_Error].last(,86400)}-{template-lld-hdd-windows:uHDD[{#DISKNAME},UDMA_CRC_Error].last()})&lt;&gt;0</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>{HOST.NAME}: [HDD.{#DISKNAME}] SMART критически высокое количество ошибок при передаче данных по интерфейсному кабелю в режиме UltraDMA {ITEM.LASTVALUE}. Проверьте/замените кабель!</name>
                             <correlation_mode>0</correlation_mode>
                             <correlation_tag/>
-                            <url>http://www.z-a-recovery.com/man-smart.htm</url>
+                            <url/>
                             <status>0</status>
                             <priority>4</priority>
-                            <description>Low value of this attribute typically indicates that something is wrong with the connectors and/or cables. Disk-to-host transfers are protected by CRC error detection code when Ultra-DMA 66 or 100 is used. So if the data gets garbled between the disk and the host machine, the receiving controller senses this and the retransmission is initiated. Such a situation is called &quot;UDMA CRC error&quot;. Once the problem is rectified (typically by replacing a cable), the attribute value returns to the normal levels pretty quick.</description>
+                            <description/>
                             <type>0</type>
-                            <manual_close>1</manual_close>
+                            <manual_close>0</manual_close>
                             <dependencies/>
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{template-lld-hdd:uHDD.critical[{#DISKNAME}].change(0)}&gt;0 and {template-lld-hdd:uHDD.critical[{#DISKNAME}].prev(0)}&gt;0</expression>
+                            <expression>{template-lld-hdd-windows:uHDD.critical[{#DISKNAME}].change(0)}&gt;0 and {template-lld-hdd-windows:uHDD.critical[{#DISKNAME}].prev(0)}&gt;0</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>{HOST.NAME}: [HDD.{#DISKNAME}] SMART новая ошибка зарегистрирована!</name>
@@ -774,14 +815,14 @@ and {template-lld-hdd:uHDD[{#DISKNAME},5 Reallocated].change(0)}&gt;0</expressio
                             <url/>
                             <status>0</status>
                             <priority>4</priority>
-                            <description>New error in SMART.</description>
+                            <description/>
                             <type>0</type>
-                            <manual_close>1</manual_close>
+                            <manual_close>0</manual_close>
                             <dependencies/>
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{template-lld-hdd:uHDD.critical[{#DISKNAME}].last()}&gt;0 and ({template-lld-hdd:uHDD.critical[{#DISKNAME}].last(0,86400)}-{template-lld-hdd:uHDD.critical[{#DISKNAME}].last()})&lt;&gt;0</expression>
+                            <expression>{template-lld-hdd-windows:uHDD.critical[{#DISKNAME}].last()}&gt;0 and ({template-lld-hdd-windows:uHDD.critical[{#DISKNAME}].last(0,86400)}-{template-lld-hdd-windows:uHDD.critical[{#DISKNAME}].last()})&lt;&gt;0</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>{HOST.NAME}: [HDD.{#DISKNAME}] SMART общее количество критических ошибок: {ITEM.LASTVALUE}</name>
@@ -790,14 +831,14 @@ and {template-lld-hdd:uHDD[{#DISKNAME},5 Reallocated].change(0)}&gt;0</expressio
                             <url/>
                             <status>0</status>
                             <priority>4</priority>
-                            <description>Trigger will be ON for two weeks.  If counter is not increasing - Trigger will back to OK</description>
+                            <description/>
                             <type>0</type>
-                            <manual_close>1</manual_close>
+                            <manual_close>0</manual_close>
                             <dependencies/>
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{template-lld-hdd:uHDD[{#DISKNAME},Spin_Retry_Count].last()}&gt;0</expression>
+                            <expression>{template-lld-hdd-windows:uHDD[{#DISKNAME},Spin_Retry_Count].last()}&gt;0</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>{HOST.NAME}: [HDD.{#DISKNAME}] SMART повторный запуск шпинделя, если первая попытка оказалась неудачной зарегистрирован!</name>
@@ -808,12 +849,12 @@ and {template-lld-hdd:uHDD[{#DISKNAME},5 Reallocated].change(0)}&gt;0</expressio
                             <priority>3</priority>
                             <description/>
                             <type>0</type>
-                            <manual_close>1</manual_close>
+                            <manual_close>0</manual_close>
                             <dependencies/>
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{template-lld-hdd:uHDD[{#DISKNAME},Temperature_Celsius].avg(1800)}&gt;50 and {template-lld-hdd:uHDD[{#DISKNAME},Temperature_Celsius].nodata(1800)}=0</expression>
+                            <expression>{template-lld-hdd-windows:uHDD[{#DISKNAME},Temperature_Celsius].avg(1800)}&gt;50 and {template-lld-hdd-windows:uHDD[{#DISKNAME},Temperature_Celsius].nodata(1800)}=0</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>{HOST.NAME}: [HDD.{#DISKNAME}] высокая температура: {ITEM.LASTVALUE}</name>
@@ -824,12 +865,12 @@ and {template-lld-hdd:uHDD[{#DISKNAME},5 Reallocated].change(0)}&gt;0</expressio
                             <priority>3</priority>
                             <description/>
                             <type>0</type>
-                            <manual_close>1</manual_close>
+                            <manual_close>0</manual_close>
                             <dependencies/>
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{template-lld-hdd:uHDD[{#DISKNAME},Temperature_Celsius].last(0)}&gt;65 and {template-lld-hdd:uHDD[{#DISKNAME},Temperature_Celsius].last(0)}&lt;100</expression>
+                            <expression>{template-lld-hdd-windows:uHDD[{#DISKNAME},Temperature_Celsius].last(0)}&gt;65 and {template-lld-hdd-windows:uHDD[{#DISKNAME},Temperature_Celsius].last(0)}&lt;100</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>{HOST.NAME}: [HDD.{#DISKNAME}] критичкеская температура - {ITEM.LASTVALUE}</name>
@@ -840,12 +881,12 @@ and {template-lld-hdd:uHDD[{#DISKNAME},5 Reallocated].change(0)}&gt;0</expressio
                             <priority>4</priority>
                             <description/>
                             <type>0</type>
-                            <manual_close>1</manual_close>
+                            <manual_close>0</manual_close>
                             <dependencies/>
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{template-lld-hdd:uHDD[{#DISKNAME},Temperature_Celsius].nodata(1250)}&lt;&gt;0</expression>
+                            <expression>{template-lld-hdd-windows:uHDD[{#DISKNAME},Temperature_Celsius].nodata(1250)}&lt;&gt;0</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>{HOST.NAME}: Информация по диску {#DISKNAME} не поступает!</name>
@@ -856,8 +897,14 @@ and {template-lld-hdd:uHDD[{#DISKNAME},5 Reallocated].change(0)}&gt;0</expressio
                             <priority>4</priority>
                             <description/>
                             <type>0</type>
-                            <manual_close>1</manual_close>
-                            <dependencies/>
+                            <manual_close>0</manual_close>
+                            <dependencies>
+                                <dependency>
+                                    <name>{HOST.NAME}: Агент мониторинга не доступен в течении {$UNRECHABLE}</name>
+                                    <expression>{template-lld-hdd-windows:agent.ping.nodata({$UNRECHABLE})}=1</expression>
+                                    <recovery_expression/>
+                                </dependency>
+                            </dependencies>
                             <tags/>
                         </trigger_prototype>
                     </trigger_prototypes>
@@ -883,7 +930,23 @@ and {template-lld-hdd:uHDD[{#DISKNAME},5 Reallocated].change(0)}&gt;0</expressio
     </templates>
     <triggers>
         <trigger>
-            <expression>{template-lld-hdd:uHDD.alert.str({$SMARTCTL_MD5SUM})}=0</expression>
+            <expression>{template-lld-hdd-windows:agent.ping.nodata({$UNRECHABLE})}=1</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
+            <name>{HOST.NAME}: Агент мониторинга не доступен в течении {$UNRECHABLE}</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url/>
+            <status>0</status>
+            <priority>5</priority>
+            <description/>
+            <type>0</type>
+            <manual_close>0</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{template-lld-hdd-windows:uHDD[hash].str({$SMARTCTL_MD5SUM})}=0</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>{HOST.NAME}: Количество дисков в системе изменилось!</name>
@@ -892,9 +955,9 @@ and {template-lld-hdd:uHDD[{#DISKNAME},5 Reallocated].change(0)}&gt;0</expressio
             <url/>
             <status>0</status>
             <priority>5</priority>
-            <description>Срочно проверить!</description>
+            <description/>
             <type>0</type>
-            <manual_close>1</manual_close>
+            <manual_close>0</manual_close>
             <dependencies/>
             <tags/>
         </trigger>
